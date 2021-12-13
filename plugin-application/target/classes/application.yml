@@ -1,0 +1,6 @@
+server:
+  port: 8080
+#插件路径
+plugin:
+  #jar包命令行启动的时候带进来
+  path: file:plugin

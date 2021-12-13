@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ly.project</groupId>
+    <artifactId>myJavaTest</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>thread</module>
+        <module>plugin-ly-initializer</module>
+        <module>plugin-application</module>
+        <module>plugin-face</module>
+        <module>spark</module>
+        <module>flinkDemo</module>
+        <module>flinkDemo</module>
+        <module>luceneTest</module>
+    </modules>
+
+    <!--    子模块相关依赖指定和dependencyManagement比较，parent必须一致，dependencyManagement可以特殊-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+    </parent>
+
+    <!--    utf-8编码-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--    dependencyManagement 标签，统一子模块公共依赖的版本,如果子模块有相同的依赖，并且没有指定具体版本，则采用该dependencyManagement定义-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ly.project</groupId>
+                <artifactId>plugin-face</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

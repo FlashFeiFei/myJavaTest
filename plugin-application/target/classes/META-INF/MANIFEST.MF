@@ -1,0 +1,2 @@
+Ly-Plugin-Class: ly.project.plugin.application
+
